@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class AuthenticationController {
@@ -33,11 +34,12 @@ public class AuthenticationController {
     public String signupPage(Model model) {
         AppUserDTO appUserDTO = new AppUserDTO();
         model.addAttribute(appUserDTO);
-        return "signup";
+        return "authentication/signup";
     }
 
     @PostMapping("/signup")
     public String signup(Model model,
+                         RedirectAttributes attributes,
                          @Valid @ModelAttribute AppUserDTO appUserDTO,
                          BindingResult result) {
         if (!appUserDTO.getPassword().equals(appUserDTO.getConfirmPassword())) {
@@ -50,7 +52,7 @@ public class AuthenticationController {
             result.addError(new FieldError("appUserDTO", "email", "email is already in use"));
         }
         if (result.hasErrors()) {
-            return "signup";
+            return "authentication/signup";
         }
 
         repository.save(new AppUserEntity(appUserDTO.getUsername(), appUserDTO.getEmail(), this.securityConfig.passwordEncoder().encode(appUserDTO.getPassword())));

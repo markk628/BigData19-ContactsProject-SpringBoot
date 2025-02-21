@@ -90,8 +90,8 @@ public class HomeController {
 
     @GetMapping("/contacts/{id}/edit")
     public String updateContactPage(Model model,
-                                RedirectAttributes attributes,
-                                @PathVariable int id) {
+                                    RedirectAttributes attributes,
+                                    @PathVariable int id) {
         ContactFullInfoProjection contact = this.contactRepository.getContactToUpdate(this.authenticationService.getCurrentUsername(), id);
         if (contact == null) {
             attributes.addFlashAttribute("msg", "Not your contact");
