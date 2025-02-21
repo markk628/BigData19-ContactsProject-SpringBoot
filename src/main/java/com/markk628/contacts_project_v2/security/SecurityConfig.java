@@ -28,9 +28,10 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
+                        .loginPage("/login")
+                        .loginProcessingUrl("/login")
                         .defaultSuccessUrl("/contacts", true)
                 )
-                .oauth2Login(withDefaults())
                 .logout(config -> config
                         .logoutSuccessUrl("/login")
                 )

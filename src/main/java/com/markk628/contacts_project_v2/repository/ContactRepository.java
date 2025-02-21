@@ -101,7 +101,7 @@ public interface ContactRepository extends CrudRepository<ContactFullInfoEntity,
     List<ContactProjection> getContacts(@Param("appUserId") String appUserId);
 
     @Query(value = SELECT_CONTACTS_WITH_NAME, nativeQuery = true)
-    ContactProjection getContactsByName(@Param("appUserId") String appUserId,
+    List<ContactProjection> getContactsByName(@Param("appUserId") String appUserId,
                                             @Param("contactName") String contactName);
 
     @Query(value = SELECT_CONTACT, nativeQuery = true)

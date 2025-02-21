@@ -22,8 +22,15 @@ public class AuthenticationController {
     @Autowired
     private SecurityConfig securityConfig;
 
+    @GetMapping("/login")
+    public String loginPage(Model model) {
+        AppUserDTO appUserDTO = new AppUserDTO();
+        model.addAttribute(appUserDTO);
+        return "authentication/login";
+    }
+
     @GetMapping("/signup")
-    public String signup(Model model) {
+    public String signupPage(Model model) {
         AppUserDTO appUserDTO = new AppUserDTO();
         model.addAttribute(appUserDTO);
         return "signup";
