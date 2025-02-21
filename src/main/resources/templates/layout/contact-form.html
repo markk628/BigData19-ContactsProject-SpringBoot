@@ -1,0 +1,70 @@
+<div th:fragment="contact-form">
+    <div class="mb-3">
+        <label class="form-label">Name*</label>
+        <input th:field="*{contactName}" class="form-control" type="text" name="contactName">
+        <p th:if="${#fields.hasErrors('contactName')}" th:errorclass="text-danger" th:errors="*{contactName}"></p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Number*</label>
+        <input th:field="*{phoneNumber}" class="form-control" type="text" name="phoneNumber">
+        <p th:if="${#fields.hasErrors('phoneNumber')}" th:errorclass="text-danger" th:errors="*{phoneNumber}"></p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Street Address</label>
+        <input th:field="*{streetAddress}" class="form-control" type="text" name="streetAddress">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">City</label>
+        <input th:field="*{city}" class="form-control" type="text" name="city">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">State</label>
+        <input th:field="*{state}" class="form-control" type="text" name="state">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Country</label>
+        <input th:field="*{country}" class="form-control" type="text" name="country">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Zip Code</label>
+        <input th:field="*{zipCode}" class="form-control" type="text" name="zipCode">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Relationship*</label>
+        <input th:field="*{relationship}" class="form-control" type="text" name="relationship">
+        <p th:if="${#fields.hasErrors('relationship')}" th:errorclass="text-danger" th:errors="*{relationship}"></p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Nationality*</label>
+        <input th:field="*{nationality}" class="form-control" type="text" name="nationality">
+        <p th:if="${#fields.hasErrors('nationality')}" th:errorclass="text-danger" th:errors="*{nationality}"></p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Profession</label>
+        <input th:field="*{profession}" class="form-control" type="text" name="profession">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Company</label>
+        <input th:field="*{company}" class="form-control" type="text" name="company">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Job Street Address</label>
+        <input th:field="*{jobStreetAddress}" class="form-control" type="text" name="jobStreetAddress">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Job City</label>
+        <input th:field="*{jobCity}" class="form-control" type="text" name="jobCity">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Job State</label>
+        <input th:field="*{jobState}" class="form-control" type="text" name="jobState">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Job Country</label>
+        <input th:field="*{jobCountry}" class="form-control" type="text" name="jobCountry">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Job Zip Code</label>
+        <input th:field="*{jobZipCode}" class="form-control" type="text" name="jobZipCode">
+    </div>
+</div>
